@@ -4,7 +4,8 @@
     // --- 1. INJECT APP CONTAINER AND CREATE SHADOW ROOT ---
     const appHost = document.createElement('div');
     appHost.id = 'my-auth-extension-container';
-    document.body.appendChild(appHost);
+    // **FIX: Use prepend instead of appendChild to inject at the start of the body**
+    document.body.prepend(appHost);
 
     // Attach the shadow root
     const shadowRoot = appHost.attachShadow({ mode: 'open' });
