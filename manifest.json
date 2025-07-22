@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Vinted Auth Extension",
+    "version": "1.2",
+    "description": "A secure Firebase Auth example for an injected application.",
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.vinted.pl/*", "*://*.vinted.com/*"],
+        "js": ["src/content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "src/main.js",
+          "styles/main.css",
+          "src/views/*/*.html",
+          "src/views/*/*.js"
+        ],
+        "matches": ["*://*.vinted.pl/*", "*://*.vinted.com/*"]
+      }
+    ],
+    "permissions": [
+      "storage"
+    ],
+    "host_permissions": [
+      "*://*.firebaseio.com/*",
+      "*://*.googleapis.com/*",
+      "https://*.functions.net/*"
+    ]
+}
