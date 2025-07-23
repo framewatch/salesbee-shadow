@@ -6,7 +6,7 @@
 */
 :host {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 20px;
     width: 320px;
     z-index: 2147483647;
@@ -70,7 +70,7 @@ a.btn-primary {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 22px);
     padding: 9px 12px;
     border: 1px solid transparent;
     border-radius: 8px;
